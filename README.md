@@ -26,7 +26,6 @@ Assuming you have table which already have 2 categories. This table can be repre
 | row_name     | status1     | status2 |
 | :------------- | :------------- | :------------- |
 | type1      | 5       | 10|
-| :------------- | :------------- | :------------- |
 | type2      | 1       | 2|
 
 It is easy, isn't it?
@@ -38,7 +37,6 @@ It is easy, isn't it?
 | row_name     | status1     | status2 |
 | :------------- | :------------- | :------------- |
 | 2012-01-01 00:00:00      | 6       | nil|
-| :------------- | :------------- | :------------- |
 | 2013-01-01 00:00:00      | nil       | 12|
 
 ## Development
