@@ -1,28 +1,45 @@
 # Sequel::Tablefunc
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sequel/tablefunc`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is sequel extension that makes using crosstab function more convenient
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sequel-tablefunc'
+gem 'sequel-tablefunc', github: 'fiscal-cliff/sequel-tablefunc'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install sequel-tablefunc
-
 ## Usage
 
-TODO: Write usage instructions here
+Assuming you have table which already have 2 categories. This table can be represented as a pivot table
+
+```ruby
+  User.select_group(:type_id, :status_id).select_append(:count.sql_function('*'.lit)).order(:type_id).crosstab(User.select(:status_id).distinct.order(:status_id)).all
+```
+
+| row_name     | status1     | status2 |
+| :------------- | :------------- | :------------- |
+| type1      | 5       | 10|
+| :------------- | :------------- | :------------- |
+| type2      | 1       | 2|
+
+It is easy, isn't it?
+
+```ruby
+  User.select_group(:date_trunc.sql_function('year', :created_at), :status_id).select_append(:count.sql_function('*'.lit)).order(:date_trunc.sql_function('year', :created_at)).crosstab(User.select(:status_id).distinct.order(:status_id)).all
+```
+
+| row_name     | status1     | status2 |
+| :------------- | :------------- | :------------- |
+| 2012-01-01 00:00:00      | 6       | nil|
+| :------------- | :------------- | :------------- |
+| 2013-01-01 00:00:00      | nil       | 12|
 
 ## Development
 
@@ -32,5 +49,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sequel-tablefunc.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/fiscal-cliff/sequel-tablefunc.

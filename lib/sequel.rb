@@ -1,1 +1,1 @@
-require 'sequel/tablefunc'
+require 'sequel/extensions/tablefunc'

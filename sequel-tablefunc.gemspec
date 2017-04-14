@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Fox"]
   spec.email         = ["why@not.com"]
 
-  spec.summary       = %q{Sequel extension facilitates using crosstab function in postgres}
-  spec.homepage      = "https://github.com"
+  spec.summary       = %q{Sequel extension that facilitates using crosstab function in postgres}
+  spec.homepage      = "https://github.com/fiscal-cliff/sequel-tablefunc"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
