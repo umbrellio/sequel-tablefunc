@@ -21,10 +21,10 @@ RSpec.describe Sequel::Tablefunc do
   it 'works' do
     expect(result.all).to include(
       a_hash_including(
-        :row_name => 'a', :"2017-04-01" => '1', :"2017-05-01" => '3', :"2017-06-01" => nil
+        :category => 'a', :"2017-04-01" => '1', :"2017-05-01" => '3', :"2017-06-01" => nil
       ),
       a_hash_including(
-        :row_name => 'b', :"2017-04-01" => '1', :"2017-05-01" => '1', :"2017-06-01" => nil
+        :category => 'b', :"2017-04-01" => '1', :"2017-05-01" => '1', :"2017-06-01" => nil
       )
     )
   end
