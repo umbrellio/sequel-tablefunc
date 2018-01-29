@@ -1,6 +1,5 @@
 require "bundler/setup"
 require "sequel/extensions/tablefunc"
-require "pry"
 
 DB_NAME = (ENV['DB_NAME'] || "tablefunc_test").freeze
 
