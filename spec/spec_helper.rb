@@ -1,15 +1,17 @@
 require "bundler/setup"
 require "sequel/extensions/tablefunc"
+require "pry"
 
 DB_NAME = (ENV['DB_NAME'] || "tablefunc_test").freeze
 
 def connect
-  Sequel.connect("postgres:///#{DB_NAME}")
+  Sequel.connect("postgres:///#{DB_NAME}").tap(&:tables)
 rescue Sequel::DatabaseConnectionError => e
   raise unless e.message.include? "database \"#{DB_NAME}\" does not exist"
-  Sequel.connect('postgres:///postgres') do |connect|
-    connect.run("create database #{DB_NAME}")
-  end
+  #Sequel.connect('postgres:///postgres') do |connect|
+  #  connect.run("create database #{DB_NAME}")
+  #end
+  `createdb #{DB_NAME}`
   Sequel.connect("postgres:///#{DB_NAME}")
 end
 
