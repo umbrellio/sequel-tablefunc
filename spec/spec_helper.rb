@@ -36,7 +36,6 @@ RSpec.configure do |config|
     data = YAML.load(IO.read("spec/fixtures/data.yml"))
 
     DB[:data].multi_insert(data)
-    p DB[:data].all
   end
 
   config.after(:all) do

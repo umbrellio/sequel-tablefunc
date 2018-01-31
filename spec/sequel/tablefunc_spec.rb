@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'yaml'
-require 'pry'
 
 RSpec.describe Sequel::Tablefunc do
   before(:all) do
