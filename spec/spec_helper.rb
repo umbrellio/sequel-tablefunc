@@ -25,7 +25,7 @@ RSpec.configure do |config|
     DB.create_table?(:data) do
       primary_key :id
       String   :group
-      Date     :created_at
+      String   :created_at
       Integer  :value
     end
 
