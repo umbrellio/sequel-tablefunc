@@ -8,7 +8,7 @@ This is sequel extension that makes using crosstab function more convenient
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sequel-tablefunc', github: 'fiscal-cliff/sequel-tablefunc'
+gem 'sequel-tablefunc'
 ```
 
 And then execute:
@@ -57,4 +57,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/fiscal-cliff/sequel-tablefunc.
+Bug reports and pull requests are welcome on GitHub at https://github.com/umbrellio/sequel-tablefunc.
