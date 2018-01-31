@@ -8,7 +8,7 @@ RSpec.describe Sequel::Tablefunc do
   end
 
   let(:categories_ds) do
-    DB.select(Sequel.lit("generate_series('01-04-2017', '01-06-2017', interval '1 month')::date::text"))
+    DB.select(Sequel.lit("unnest(ARRAY['2017-04-01', '2017-05-01', '2017-06-01'])"))
   end
 
   let(:result) do
