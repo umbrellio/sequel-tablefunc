@@ -1,5 +1,7 @@
 require "bundler/setup"
 require "sequel/extensions/tablefunc"
+require 'coveralls'
+Coveralls.wear!
 
 DB_NAME = (ENV['DB_NAME'] || "tablefunc_test").freeze
 
