@@ -1,6 +1,6 @@
 # Sequel::Tablefunc [![Build Status](https://travis-ci.org/fiscal-cliff/sequel-tablefunc.svg?branch=master)](https://travis-ci.org/fiscal-cliff/sequel-tablefunc) [![Gem Version](https://badge.fury.io/rb/sequel-tablefunc.svg)](https://badge.fury.io/rb/sequel-tablefunc) [![Coverage Status](https://coveralls.io/repos/github/fiscal-cliff/sequel-tablefunc/badge.svg?branch=master)](https://coveralls.io/github/fiscal-cliff/sequel-tablefunc?branch=master)
 
-This is sequel extension that makes using crosstab function more convenient
+This is sequel extension makes using crosstab function more convenient
 
 
 ## Installation
