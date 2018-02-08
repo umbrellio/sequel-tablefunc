@@ -21,7 +21,7 @@ Assuming you have table which already have 2 categories. This table can be repre
 
 ```ruby
   User.select_group(:type_id, :status_id)
-      .select_append(:count.sql_function('*'.lit))
+      .select_append(:count.sql_function.*)
       .order(:type_id)
       .crosstab(User.select(:status_id).distinct.order(:status_id))
       .all
@@ -36,7 +36,7 @@ It is easy, isn't it?
 
 ```ruby
   User.select_group(:date_trunc.sql_function('year', :created_at), :status_id)
-      .select_append(:count.sql_function('*'.lit))
+      .select_append(:count.sql_function.*)
       .order(:date_trunc.sql_function('year', :created_at))
       .crosstab(User.select(:status_id)
       .distinct
